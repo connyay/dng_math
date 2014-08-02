@@ -1,3 +1,5 @@
+var API_HOST = 'http://svgtopng.herokuapp.com';
+
 var Preview = {
     // delay after keystroke before updating
     delay: 125,
@@ -103,10 +105,10 @@ function svg2png() {
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function(data) {
 		if (xhr.readyState == 4 && xhr.status == 200) {
-			window.location.assign('http://svgtopng.herokuapp.com/i/' + xhr.response);
+			window.location.assign(API_HOST + '/i/' + xhr.response);
 		}
 	}
-	xhr.open('POST', 'http://svgtopng.herokuapp.com');
+	xhr.open('POST', API_HOST);
 	xhr.send(Preview.toString());
 }
 
