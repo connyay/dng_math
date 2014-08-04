@@ -12,40 +12,43 @@ U.S. Government Users Restricted Rights:  Use, duplication or disclosure restric
 </ModulePrefs>
 <Content type="html">
 <![CDATA[
-	
-	<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        showProcessingMessages: false,
-        showMathMenu: false,
-        tex2jax: {
-            inlineMath: [
-                ['$', '$'],
-                ['\\(', '\\)']
-            ]
-        }
-    });
-    </script>
-
-    <script type="text/javascript" src="lib/mathjax/2.3/MathJax.js?config=TeX-AMS-MML_SVG-full"></script>
-    <script type="text/javascript" src="script.js"></script>
-    <script type="text/javascript" src="ext.js"></script>
-    
-    <p><button onclick="loadFormula()">Load Formula</button> | <button onclick="saveFormula()">Save Formula</button></p>
-
-    Type text in the box below:
-    <br/>
-
-    <textarea id="MathInput" cols="60" rows="10" onkeyup="Preview.Update()" style="margin-top:5px"></textarea>
-    <br/>
-    <br/>Preview is shown here:
-    <div id="MathPreview" style="padding: 3px; width:50%; margin-top:5px"></div>
-    <div id="MathBuffer" style="padding: 3px; width:50%; margin-top:5px; visibility:hidden; position:absolute; top:0; left: 0"></div>
-
-    <script>
-    Preview.Init();
-    </script>
-
-    <p><button onclick="svg2png()">Export to Image</button></p>
+<html>
+   <head>
+      <title>MathJax Preview</title>
+      <!-- Copyright (c) 2012-2014 The MathJax Consortium -->
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <script type="text/x-mathjax-config">
+         MathJax.Hub.Config({
+             showProcessingMessages: false,
+             showMathMenu: false,
+             tex2jax: {
+                 inlineMath: [
+                     ['$', '$'],
+                     ['\\(', '\\)']
+                 ]
+             }
+         });
+      </script>
+      <script type="text/javascript" src="lib/mathjax/2.3/MathJax.js?config=TeX-AMS-MML_SVG-full"></script>
+      <script type="text/javascript" src="script.js"></script>
+      <script type="text/javascript" src="ext.js"></script>
+   </head>
+   <body>
+      <p><button onclick="loadFormula()">Load Formula</button> | <button onclick="saveFormula()">Save Formula</button></p>
+      Type text in the box below:
+      <br/>
+      <textarea id="MathInput" cols="60" rows="10" onkeyup="Preview.Update()" style="margin-top:5px"></textarea>
+      <br/>
+      <br/>Preview is shown here:
+      <div id="MathPreview" style="padding: 3px; width:50%; margin-top:5px"></div>
+      <div id="MathBuffer" style="padding: 3px; width:50%; margin-top:5px; visibility:hidden; position:absolute; top:0; left: 0"></div>
+      <script>
+         Preview.Init();
+      </script>
+      <p><button onclick="svg2png()">Export to Image</button></p>
+   </body>
+</html>    
 
 ]]>
 </Content>
