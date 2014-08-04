@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+ Licensed Materials - Property of IBM
+© Copyright IBM Corporation 2014
+
+U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp. 
+-->
+
+<Module>
+<ModulePrefs title="Math" height="750" scrolling="true">
+<Optional feature="com.ibm.rdm.rm.api"></Optional>	
+</ModulePrefs>
+<Content type="html">
+<![CDATA[
+	
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        showProcessingMessages: false,
+        showMathMenu: false,
+        tex2jax: {
+            inlineMath: [
+                ['$', '$'],
+                ['\\(', '\\)']
+            ]
+        }
+    });
+    </script>
+
+    <script type="text/javascript" src="lib/mathjax/2.3/MathJax.js?config=TeX-AMS-MML_SVG-full"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="ext.js"></script>
+    
+    <p><button onclick="loadFormula()">Load Formula</button> | <button onclick="saveFormula()">Save Formula</button></p>
+
+    Type text in the box below:
+    <br/>
+
+    <textarea id="MathInput" cols="60" rows="10" onkeyup="Preview.Update()" style="margin-top:5px"></textarea>
+    <br/>
+    <br/>Preview is shown here:
+    <div id="MathPreview" style="padding: 3px; width:50%; margin-top:5px"></div>
+    <div id="MathBuffer" style="padding: 3px; width:50%; margin-top:5px; visibility:hidden; position:absolute; top:0; left: 0"></div>
+
+    <script>
+    Preview.Init();
+    </script>
+
+    <p><button onclick="svg2png()">Export to Image</button></p>
+
+]]>
+</Content>
+</Module>
