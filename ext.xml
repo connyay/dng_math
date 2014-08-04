@@ -7,7 +7,7 @@ U.S. Government Users Restricted Rights:  Use, duplication or disclosure restric
 -->
 
 <Module>
-<ModulePrefs title="Math" height="750" scrolling="true">
+<ModulePrefs title="Math" height="750" scrolling="true" doctype="html">
 <Optional feature="com.ibm.rdm.rm.api"></Optional>	
 </ModulePrefs>
 <Content type="html">
