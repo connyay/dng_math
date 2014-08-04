@@ -1,4 +1,4 @@
-var API_HOST = 'https://svgtopng.herokuapp.com';
+var API_HOST = 'https://svgtopng.herokuapp.com'; /* 'http://localhost:5000'; */
 
 var Preview = {
     // delay after keystroke before updating
@@ -14,7 +14,7 @@ var Preview = {
     // true when MathJax is processing
     jaxRunning: false,
     // used to check if an update is needed
-    oldText: null,
+    prevText: null,
 
     //
     //  Get the preview and buffer DIV's
@@ -66,8 +66,8 @@ var Preview = {
         Preview.timeout = null;
         if (this.jaxRunning) return;
         var text = document.getElementById("MathInput").value;
-        if (text === this.oldtext) return;
-        this.buffer.innerHTML = this.oldtext = text;
+        if (text === this.prevtext) return;
+        this.buffer.innerHTML = this.prevtext = text;
         this.jaxRunning = true;
         MathJax.Hub.Queue(
             ["Typeset", MathJax.Hub, this.buffer], ["PreviewDone", this]
