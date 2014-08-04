@@ -1,4 +1,4 @@
-var API_HOST = 'http://svgtopng.herokuapp.com';
+var API_HOST = 'https://svgtopng.herokuapp.com';
 
 var Preview = {
     // delay after keystroke before updating
