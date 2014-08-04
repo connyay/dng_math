@@ -6,8 +6,8 @@
 U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp. 
 -->
 
-<Module>
-<ModulePrefs title="Math" height="750" scrolling="true" doctype="html">
+<Module specificationVersion="2.0">
+<ModulePrefs title="Math" height="750" scrolling="true">
 <Optional feature="com.ibm.rdm.rm.api"></Optional>	
 </ModulePrefs>
 <Content type="html">
