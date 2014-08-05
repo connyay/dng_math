@@ -22,11 +22,13 @@
 
     <script type="text/javascript" src="lib/mathjax/2.3/MathJax.js?config=TeX-AMS-MML_SVG-full"></script>
     <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="samples.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div class="container">
+        <h4>Preview</h4>
         <div class="sixteen columns">
             <label for="MathInput">Type text in the box below:</label>
             <textarea id="MathInput" class="ten columns" onkeyup="Preview.Update()" style="margin-top:5px"></textarea>
@@ -38,6 +40,28 @@
 
             <hr>
             <button onclick="svg2png()">Export to Image</button>
+        </div>
+
+        <h4>Samples</h4>
+        <div class="eight columns">
+            <label for="latexSamples">LaTeX</label>
+            <select id="latexSamples" onchange="clearSelection('mathmlSamples') && showSample('LaTeX', this.value)">
+                <option value="-1">Select One</option>
+                <option value="quadratic">The Quadratic Formula</option>
+                <option value="lorenz">The Lorenz Equations</option>
+                <option value="cauchy">The Cauchy-Schwarz Inequality</option>
+                <option value="cubic">Cubic Equation</option>
+            </select>
+        </div>
+        <div class="eight columns">
+            <label for="mathmlSamples">MathML</label>
+            <select id="mathmlSamples" onchange="clearSelection('latexSamples') && showSample('MathML', this.value)">
+                <option value="-1">Select One</option>
+                <option value="quadratic">The Quadratic Formula</option>
+                <option value="cauchys">Cauchy's Integral Formula</option>
+                <option value="gauss">Gauss' Divergence Theorem</option>
+                <option value="stdDev">Standard Deviation</option>
+            </select>
         </div>
         <script>
         Preview.Init();
