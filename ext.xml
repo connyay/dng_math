@@ -36,10 +36,18 @@ U.S. Government Users Restricted Rights:  Use, duplication or disclosure restric
     <br/>Preview is shown here:
     <div id="MathPreview" style="padding: 3px; width:50%; margin-top:5px"></div>
     <div id="MathBuffer" style="padding: 3px; width:50%; margin-top:5px; visibility:hidden; position:absolute; top:0; left: 0"></div>
-    <script>
+    <p><button onclick="svg2png()">Export to Image</button></p>
+
+
+    <script type="text/javascript">
        Preview.Init();
     </script>
-    <p><button onclick="svg2png()">Export to Image</button></p>
+    <script type="text/javascript">
+      var baseTag = document.querySelector('base');
+      if(baseTag) {
+        baseTag.remove();
+      }
+    </script>
 ]]>
 </Content>
 </Module>
