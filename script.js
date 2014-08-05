@@ -99,6 +99,10 @@ var Preview = {
         if (defs) {
             svgNode.appendChild(defs);
         }
+
+        if(window.isIE) {
+            return svgNode.outerHTML;
+        }
         var serializer = new XMLSerializer();
         return serializer.serializeToString(svgNode);
     }

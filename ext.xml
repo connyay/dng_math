@@ -11,6 +11,7 @@ U.S. Government Users Restricted Rights:  Use, duplication or disclosure restric
       <Require feature="dynamic-height"/>
    </ModulePrefs>
    <Content type="html"><![CDATA[
+    <!--[if IE]><script type="text/javascript">window['isIE'] = true;</script><![endif]-->
     <script type="text/x-mathjax-config">
        MathJax.Hub.Config({
            showProcessingMessages: false,
