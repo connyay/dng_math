@@ -30,7 +30,7 @@ U.S. Government Users Restricted Rights:  Use, duplication or disclosure restric
 
 
     <div class="container">
-      <div class="sixteen columns text-center">
+      <div class="sixteen columns" style="display: none;" id="actionButtons">
         <button onclick="loadFormula()">Load Formula</button>
 
         <button onclick="saveFormula()">Save Formula</button>

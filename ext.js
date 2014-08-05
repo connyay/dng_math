@@ -4,18 +4,43 @@ function adjustHeight() {
     gadgets.window.adjustHeight();
 }
 
+function setActionButtonDisplay(display) {
+    var actionBtns = document.getElementById("actionButtons");
+    actionBtns.style.display = display;
+    adjustHeight();
+}
+
+function showActionButtons() {
+    setActionButtonDisplay('');
+}
+
+function hideActionButtons() {
+    setActionButtonDisplay('none');
+}
+
 RM.Event.subscribe(RM.Event.ARTIFACT_OPENED, function(ref) {
     CURRENT_ARTIFACT.ref = ref;
-    findFormula(CURRENT_ARTIFACT.ref);
+    findFormula(CURRENT_ARTIFACT.ref, function(hasFormula) {
+        if (hasFormula) {
+            showActionButtons();
+        }
+    });
+});
+
+RM.Event.subscribe(RM.Event.ARTIFACT_CLOSED, function(ref) {
+    hideActionButtons();
 });
 
 
-function findFormula(ref) {
+function findFormula(ref, cb) {
     RM.Data.getAttributes(ref, [RM.Data.Attributes.FORMAT, 'Formula'], function(opResult) {
         if (opResult.code === RM.OperationResult.OPERATION_OK) {
             var attrs = opResult.data[0];
-            if (attrs.values[RM.Data.Attributes.FORMAT] === RM.Data.Formats.WRAPPED) {
+            if (attrs.values[RM.Data.Attributes.FORMAT] === RM.Data.Formats.WRAPPED && attrs.values['Formula']) {
                 CURRENT_ARTIFACT.formula = attrs.values['Formula'];
+                cb(true);
+            } else {
+                cb(false);
             }
         }
     });
