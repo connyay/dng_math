@@ -1,4 +1,5 @@
-var CURRENT_ARTIFACT = {};
+var CURRENT_ARTIFACT = {},
+    FORMULA_ATTR = 'Formula';
 
 function adjustHeight() {
     gadgets.window.adjustHeight();
@@ -33,11 +34,11 @@ RM.Event.subscribe(RM.Event.ARTIFACT_CLOSED, function(ref) {
 
 
 function findFormula(ref, cb) {
-    RM.Data.getAttributes(ref, [RM.Data.Attributes.FORMAT, 'Formula'], function(opResult) {
+    RM.Data.getAttributes(ref, [RM.Data.Attributes.FORMAT, FORMULA_ATTR], function(opResult) {
         if (opResult.code === RM.OperationResult.OPERATION_OK) {
             var attrs = opResult.data[0];
-            if (attrs.values[RM.Data.Attributes.FORMAT] === RM.Data.Formats.WRAPPED && attrs.values['Formula']) {
-                CURRENT_ARTIFACT.formula = attrs.values['Formula'];
+            if (attrs.values[RM.Data.Attributes.FORMAT] === RM.Data.Formats.WRAPPED && attrs.values[FORMULA_ATTR]) {
+                CURRENT_ARTIFACT.formula = attrs.values[FORMULA_ATTR];
                 cb(true);
             } else {
                 cb(false);
