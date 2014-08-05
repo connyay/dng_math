@@ -93,7 +93,6 @@ var Preview = {
         var dimensions = svgSrcNode.getBoundingClientRect();
         svgNode.setAttribute('height', dimensions.height);
         svgNode.setAttribute('width', dimensions.width);
-        svgNode.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
         var gylphs = document.getElementById('MathJax_SVG_glyphs');
         var defs = gylphs ? gylphs.cloneNode(true) : null;
         if (defs) {
