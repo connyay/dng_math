@@ -59,7 +59,7 @@ function saveFormula() {
     var formula = document.getElementById("MathInput").value;
 
     var newFormula = new RM.ArtifactAttributes(CURRENT_ARTIFACT.ref);
-    newFormula.values['Formula'] = formula;
+    newFormula.values[FORMULA_ATTR] = formula;
     RM.Data.setAttributes(newFormula, function(setResult) {
         if (setResult.code === RM.OperationResult.OPERATION_OK) {
             console.log('Saved Formula');
