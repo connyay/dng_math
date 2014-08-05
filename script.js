@@ -106,7 +106,8 @@ var Preview = {
 };
 
 function svg2png() {
-	var xhr = new XMLHttpRequest();
+    var xhr = (typeof XDomainRequest !== 'undefined') ? new XDomainRequest() : new XMLHttpRequest();
+
 	xhr.onreadystatechange = function(data) {
 		if (xhr.readyState == 4 && xhr.status == 200) {
 			window.location.assign(API_HOST + '/i/' + xhr.response);
