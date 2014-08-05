@@ -6,7 +6,7 @@ function adjustHeight() {
 }
 
 function setActionButtonDisplay(display) {
-    var actionBtns = document.getElementById("actionButtons");
+    var actionBtns = document.getElementById('actionButtons');
     actionBtns.style.display = display;
     adjustHeight();
 }
@@ -49,14 +49,14 @@ function findFormula(ref, cb) {
 
 function loadFormula() {
     if (CURRENT_ARTIFACT.formula) {
-        var input = document.getElementById("MathInput");
+        var input = document.getElementById('MathInput');
         input.value = CURRENT_ARTIFACT.formula;
         input.onkeyup();
     }
 }
 
 function saveFormula() {
-    var formula = document.getElementById("MathInput").value;
+    var formula = document.getElementById('MathInput').value;
 
     var newFormula = new RM.ArtifactAttributes(CURRENT_ARTIFACT.ref);
     newFormula.values[FORMULA_ATTR] = formula;
