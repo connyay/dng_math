@@ -79,6 +79,9 @@ var Preview = {
     PreviewDone: function() {
         this.jaxRunning = false;
         this.SwapBuffers();
+        if(typeof adjustHeight === 'function') {
+            adjustHeight();
+        }
     },
 
     toString: function() {

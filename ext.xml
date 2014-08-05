@@ -6,8 +6,9 @@
 U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp. 
 -->
 <Module specificationVersion="2.0">
-   <ModulePrefs title="Math" height="750" scrolling="true">
+   <ModulePrefs title="DNG Math">
       <Optional feature="com.ibm.rdm.rm.api" />
+      <Require feature="dynamic-height"/>
    </ModulePrefs>
    <Content type="html"><![CDATA[
     <script type="text/x-mathjax-config">

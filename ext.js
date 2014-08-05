@@ -1,5 +1,9 @@
 var CURRENT_ARTIFACT = {};
 
+function adjustHeight() {
+    gadgets.window.adjustHeight();
+}
+
 RM.Event.subscribe(RM.Event.ARTIFACT_OPENED, function(ref) {
     CURRENT_ARTIFACT.ref = ref;
     findFormula(CURRENT_ARTIFACT.ref);
@@ -36,3 +40,5 @@ function saveFormula() {
         }
     });
 }
+
+gadgets.util.registerOnLoadHandler(adjustHeight);
