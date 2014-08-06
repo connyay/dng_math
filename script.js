@@ -79,7 +79,7 @@ var Preview = {
     PreviewDone: function() {
         this.jaxRunning = false;
         this.SwapBuffers();
-        if(typeof adjustHeight === 'function') {
+        if (typeof adjustHeight === 'function') {
             adjustHeight();
         }
     },
@@ -99,7 +99,7 @@ var Preview = {
             svgNode.appendChild(defs);
         }
 
-        if(window.isIE) {
+        if (window.isIE) {
             return svgNode.outerHTML;
         }
         var serializer = new XMLSerializer();
@@ -108,20 +108,23 @@ var Preview = {
 
 };
 
-function svg2png() {
+function svg2png(btn) {
+    btn.disabled = true;
     var xhr = (typeof XDomainRequest !== 'undefined') ? new XDomainRequest() : new XMLHttpRequest();
 
-	xhr.onreadystatechange = function(data) {
-		if (xhr.readyState == 4 && xhr.status == 200) {
-			window.location.assign(API_HOST + '/i/' + xhr.response);
-		}
-	}
-	xhr.open('POST', API_HOST);
-	xhr.send(Preview.toString());
+    xhr.onreadystatechange = function(data) {
+        if (xhr.readyState === 4) {
+            btn.disabled = false;
+            if (xhr.status === 200) {
+                window.location.assign(API_HOST + '/i/' + xhr.response);
+            }
+        }
+    }
+    xhr.open('POST', API_HOST);
+    xhr.send(Preview.toString());
 }
 
 //  Cache a callback to the CreatePreview action
 Preview.callback = MathJax.Callback(["CreatePreview", Preview]);
 // make sure it can run more than once
 Preview.callback.autoReset = true;
-
