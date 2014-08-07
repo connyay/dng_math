@@ -37,7 +37,7 @@ function findFormula(ref, cb) {
     RM.Data.getAttributes(ref, [RM.Data.Attributes.FORMAT, FORMULA_ATTR], function(opResult) {
         if (opResult.code === RM.OperationResult.OPERATION_OK) {
             var attrs = opResult.data[0];
-            if (attrs.values[RM.Data.Attributes.FORMAT] === RM.Data.Formats.WRAPPED && attrs.values[FORMULA_ATTR]) {
+            if (attrs.values[RM.Data.Attributes.FORMAT] === RM.Data.Formats.WRAPPED && (typeof attrs.values[FORMULA_ATTR] !== 'undefined')) {
                 CURRENT_ARTIFACT.formula = attrs.values[FORMULA_ATTR];
                 cb(true);
             } else {
