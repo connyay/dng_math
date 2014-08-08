@@ -11,3 +11,6 @@ How to add DNG Math to DNG
 ![Specify `https://connyay.github.io/dng_math/ext.xml` as the gadget URL and click 'Add Widget'](img/3.png?raw=true)  
 6) Done!  
 ![Done!](img/4.png?raw=true)  
+
+### Note
+The Load / Save formula functionality requires an attribute named `Formula` to be on the currently open artifact.
