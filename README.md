@@ -1,2 +1,4 @@
-dng_math
+DNG Math
 ========
+
+##### [Setup Instructions](SETUP.md)
